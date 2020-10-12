@@ -82,7 +82,7 @@ func (r *Rule) Match(from, to, subject string) bool {
 }
 
 // GetChannels return the first channels with attempt the rules
-func (f *Filter) GetChannels(from, subject string) []string {
+func (f *Filter) GetChannels(from, to, subject string) []string {
 	for _, r := range *f {
 		if r.Match(from, to, subject) {
 			return r.Channels

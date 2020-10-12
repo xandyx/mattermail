@@ -123,7 +123,6 @@ func MigrateFromV1(v1 ConfigV1) *Config {
 		for _, r := range *c.Filter {
 			*filter = append(*filter, &Rule{
 				From:     r.From,
-				To:       r.To,
 				Subject:  r.Subject,
 				Channels: []string{r.Channel},
 			})
