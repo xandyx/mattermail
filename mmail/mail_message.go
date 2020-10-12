@@ -25,6 +25,7 @@ type Attachment struct {
 // MailMessage mail message with fields used in mattermail
 type MailMessage struct {
 	From        string
+	To          string
 	Subject     string
 	EmailText   string
 	EmailBody   string
@@ -41,6 +42,7 @@ func ReadMailMessage(r io.Reader) (*MailMessage, error) {
 	}
 
 	mm.From = env.GetHeader("From")
+	mm.To = env.GetHeader("To")
 	mm.Subject = env.GetHeader("Subject")
 	mm.EmailText = env.Text
 
